@@ -1,0 +1,68 @@
+.about-section{
+  background-color: $dark-light;
+
+  .about-text,
+  .about-img{
+    width: 50%;
+    padding: 0 15px;
+
+    @include tablet{
+      width: 100%;
+    }
+  }
+  .about-text{
+    h3{
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      margin: 0 0 15px;
+
+      @include tablet{
+        font-size: 1.5rem;
+      }
+    }
+    p{
+      margin: 0 0 15px;
+    }
+    .btn{
+      margin: 15px 0 0;
+    }
+  }
+
+  .about-img{
+    @include tablet{
+      margin-top: 40px;
+    }
+    .img-box{
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border: 3px solid $main-color;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+        animation: spin01 10s linear infinite;
+      }
+      h3{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: 1.8rem;
+        font-family: $cursive-font;
+        text-transform: capitalize;
+        color: $dark;
+        font-weight: bold;
+        user-select: none;
+      }
+      img{
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.footer{
+  padding: 80px 0 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") fixed center;
+  position: relative;
+  z-index: 1;
+
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -1;
+  }
+
+  .footer-item{
+    width: calc(100% / 3);
+    padding: 0 15px;
+    text-align: center;
+
+    @include tablet{
+      width: 100%;
+
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+
+    h3{
+      text-transform: capitalize;
+      font-size: 1.4rem;
+      margin: 0 0 15px;
+    }
+    p{
+      line-height: 30px;
+    }
+
+    .social-links{
+      margin-top: 15px;
+      a{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        color: $white-light;
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+
+        &:hover{
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  .copyright{
+    width: 100%;
+    margin: 50px 0 0;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid $white-light;
+  }
+}

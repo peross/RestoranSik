@@ -1,0 +1,124 @@
+//Colors
+$red: #E3000E;
+$main-color: #eaa023;
+$dark: #0c1023;
+$dark-light: #191f3a;
+$white: #fff;
+$white-light: #c8c8c8;
+$black: #000;
+$shadow: 0 0 15px rgba(0,0,0,0.25);
+
+
+//Min vh
+.min-vh-100{
+  min-height: 100vh;
+}
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+$cursive-font: 'Dancing Script', cursive;
+
+//Buttons
+.btn{
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 30px;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  color: $main-color;
+  line-height: 1.5;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+}
+
+.btn-default{
+  border: 2px solid $main-color;
+  &:hover{
+    color: $white;
+    background-color: $main-color;
+  }
+}
+
+//Animation keyframes
+@keyframes zoomInOut {
+  0%, 100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin01 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pageLoader {
+  0%, 100%{
+    transform: translateX(-50px);
+  }
+  50%{
+    transform: translateX(50px);
+  }
+}
+
+//Section padding
+.section-padding{
+  padding: 80px 0;
+}
+
+//Section title
+.section-title{
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
+  margin-bottom: 60px;
+
+  h2{
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    &:before{
+      content: attr(data-title);
+      display: block;
+      font-size: 1.5rem;
+      color: $main-color;
+      font-family: $cursive-font;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}
+
+//Screen size
+@mixin lg{
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin sm{
+  @media screen and (max-width: 576px){
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media screen and (max-width: 280px){
+    @content;
+  }
+}

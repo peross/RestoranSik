@@ -1,0 +1,25 @@
+.page-loader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $dark;
+  z-index: 999;
+  transition: all 0.5s ease;
+
+  &:before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100px;
+    left: calc(50% - 50px);
+    top: calc(50% - 2px);
+    background-color: $main-color;
+    animation: pageLoader 1s linear infinite;
+  }
+
+  &.fade-out{
+    opacity: 0;
+  }
+}

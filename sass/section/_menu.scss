@@ -1,0 +1,103 @@
+.menu-section{
+  background-color: $dark-light;
+  padding-bottom: 60px;
+
+  .section-title{
+    margin-bottom: 40px;
+  }
+  .menu-tabs{
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    .menu-tab-item{
+      font-size: 1.1rem;
+      font-family: inherit;
+      text-transform: capitalize;
+      border: none;
+      background-color: transparent;
+      font-weight: 500;
+      color: $white;
+      cursor: pointer;
+      margin: 0 10px 10px;
+      transition: color 0.3s ease;
+      display: inline-block;
+
+      &.active{
+        color: $main-color;
+      }
+    }
+  }
+
+  .menu-tab-content{
+    display: none;
+
+    &.active{
+      display: flex;
+    }
+  }
+
+  .menu-item{
+    width: 50%;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @include tablet{
+      width: 100%;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      border-bottom: 1px dashed $white-light;
+    }
+
+    /*
+    &:nth-last-of-type(2),
+    &:nth-last-of-type(1){
+      &:after{
+        border: none;
+      }
+    } */
+
+    &-title{
+      display: flex;
+      align-items: center;
+      max-width: calc(100% - 80px);
+
+      img{
+        max-width: 100px;
+        margin-right: 15px;
+      }
+
+      h3{
+        font-size: 1rem;
+        text-transform: capitalize;
+        transition: color 0.3s ease;
+      }
+    }
+
+    &-price{
+      font-size: 1rem;
+      font-weight: 500;
+      color: $main-color;
+      transition: color 0.3s ease;
+    }
+
+    &:hover{
+      h3{
+        color: $main-color;
+      }
+      .menu-item-price{
+        color: $white;
+      }
+    }
+  }
+}
